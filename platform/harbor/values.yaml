@@ -1,0 +1,39 @@
+expose:
+  type: ingress
+  tls:
+    enabled: true
+    certSource: auto
+  ingress:
+    hosts:
+      core: harbor.local
+    className: nginx
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: "true"
+      ingress.kubernetes.io/proxy-body-size: "0"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
+
+externalURL: https://harbor.local
+
+persistence:
+  enabled: true
+  persistentVolumeClaim:
+    registry:
+      size: 20Gi
+    jobservice:
+      jobLog:
+        size: 1Gi
+    database:
+      size: 5Gi
+    redis:
+      size: 2Gi
+    trivy:
+      size: 5Gi
+
+database:
+  type: internal
+  internal:
+    password: "jQL69f1x4wo/1zp49jcZQBMfbA4x5B1n"
+
+redis:
+  type: internal
