@@ -5,3 +5,4 @@ resources:
   - nginx-demo.yaml
   - argocd-ingress.yaml
   - harbor.yaml
+  - keycloak.yaml
