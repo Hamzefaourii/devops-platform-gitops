@@ -7,3 +7,4 @@ resources:
   - harbor.yaml
   - database.yaml
   - keycloak.yaml
+  - vault.yaml
