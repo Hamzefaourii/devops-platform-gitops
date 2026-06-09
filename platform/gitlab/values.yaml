@@ -73,9 +73,15 @@ gitlab:
   webservice:
     minReplicas: 1
     maxReplicas: 1
+    hpa:
+      minReplicas: 1
+      maxReplicas: 1
   sidekiq:
     minReplicas: 1
     maxReplicas: 1
+    hpa:
+      minReplicas: 1
+      maxReplicas: 1
   toolbox:
     backups:
       objectStorage:
