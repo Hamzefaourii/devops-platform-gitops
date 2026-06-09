@@ -8,7 +8,7 @@ spec:
   sources:
     - repoURL: https://charts.gitlab.io
       chart: gitlab
-      targetRevision: 10.0.1
+      targetRevision: 9.11.5
       helm:
         valueFiles:
           - $values/platform/gitlab/values.yaml
