@@ -1,5 +1,8 @@
 global:
   edition: ce
+  
+  minio:
+    enabled: false
 
   hosts:
     domain: local
@@ -85,3 +88,9 @@ gitlab-shell:
 
 upgradeCheck:
   enabled: false
+
+postgresql:
+  install: false
+
+redis:
+  install: false
