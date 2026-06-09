@@ -10,3 +10,4 @@ resources:
   - vault.yaml
   - redis.yaml
   - minio.yaml
+  - gitlab.yaml

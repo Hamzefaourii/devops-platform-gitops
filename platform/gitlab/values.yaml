@@ -1,0 +1,84 @@
+global:
+  edition: ce
+
+  hosts:
+    domain: local
+    https: false
+    gitlab:
+      name: gitlab.local
+
+  gatewayApi:
+    enabled: false
+
+  ingress:
+    provider: nginx
+    class: nginx
+
+  initialRootPassword:
+    secret: gitlab-root-password
+    key: password
+
+  psql:
+    host: platform-postgres.database.svc.cluster.local
+    port: 5432
+    username: gitlab
+    database: gitlabhq_production
+    password:
+      secret: gitlab-postgres-secret
+      key: password
+
+  redis:
+    auth:
+      enabled: false
+    host: platform-redis.redis.svc.cluster.local
+    port: 6379
+
+  appConfig:
+    object_store:
+      enabled: true
+      proxy_download: true
+      connection:
+        secret: gitlab-object-storage
+        key: connection
+    lfs:
+      bucket: gitlab
+    artifacts:
+      bucket: gitlab
+    uploads:
+      bucket: gitlab
+    packages:
+      bucket: gitlab
+
+installCertmanager: false
+
+certmanager-issuer:
+  email: fake@example.com
+
+nginx-ingress:
+  enabled: false
+
+prometheus:
+  install: false
+
+registry:
+  enabled: false
+
+gitlab-runner:
+  install: false
+
+gitlab:
+  webservice:
+    minReplicas: 1
+    maxReplicas: 1
+  sidekiq:
+    minReplicas: 1
+    maxReplicas: 1
+  toolbox:
+    backups:
+      objectStorage:
+        config:
+          secret: gitlab-object-storage
+          key: connection
+
+gitlab-shell:
+  enabled: true
