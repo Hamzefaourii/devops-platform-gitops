@@ -10,4 +10,5 @@ resources:
   - vault.yaml
   - redis.yaml
   - minio.yaml
+  - gitlab-prereqs.yaml
   - gitlab.yaml
