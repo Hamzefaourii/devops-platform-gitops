@@ -76,12 +76,22 @@ gitlab:
     hpa:
       minReplicas: 1
       maxReplicas: 1
+    deployment:
+      strategy:
+        rollingUpdate:
+          maxSurge: 0
+          maxUnavailable: 1
   sidekiq:
     minReplicas: 1
     maxReplicas: 1
     hpa:
       minReplicas: 1
       maxReplicas: 1
+    deployment:
+      strategy:
+        rollingUpdate:
+          maxSurge: 0
+          maxUnavailable: 1
   toolbox:
     backups:
       objectStorage:
