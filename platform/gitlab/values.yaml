@@ -82,3 +82,6 @@ gitlab:
 
 gitlab-shell:
   enabled: true
+
+upgradeCheck:
+  enabled: false
